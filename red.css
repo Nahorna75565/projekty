@@ -161,3 +161,42 @@ main {
   background: #fff;
   transition: .3s;
 }
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+#contactForm textarea {
+  height: 60px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #922b21;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #d5f5e3;
+}
+
+#error-message {
+  font-size: 11px;
+  margin-top: 5px;
+  line-height: 1.2;
+}

@@ -113,32 +113,64 @@ main {
   text-decoration: underline;
 }
 
-.footer {
-  text-align: center;
-  font-size: 12px;
-  color: #888;
-  margin: 5px;
-  padding: 4px;
-}
-
-
 .controls {
-  position: fixed;
+  position: fixed;   
   bottom: 20px;
   right: 20px;
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 15px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
   display: flex;
   gap: 10px;
-  padding: 15px;
-  background: rgba(255,255,255,.9);
-  border-radius: 50px;
-  z-index: 1000;
 }
 
 .controls button {
   padding: 8px 15px;
-  font: bold 14px sans-serif;
+  font-weight: bold;
   border: 1px solid #ccc;
   border-radius: 20px;
-  background: #fff;
-  transition: .3s;
+  cursor: pointer;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+#contactForm textarea {
+  height: 60px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1e8449;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #d5f5e3;
+}
+
+#error-message {
+  font-size: 11px;
+  margin-top: 5px;
+  line-height: 1.2;
 }

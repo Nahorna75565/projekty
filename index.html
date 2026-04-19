@@ -24,7 +24,7 @@
       <aside class="left-col">
         <section class="skill-category">
           <h2>Umiejętności</h2>
-          <ul>
+          <ul id="lista-umiejetnosci">
             <li>Podstawy HTML i CSS</li>
             <li>Projektowanie baz danych SQL</li>
             <li>Podstawy programowania C#</li>
@@ -36,12 +36,32 @@
 
         <section class="skill-category">
           <h2>Języki</h2>
-          <ul>
+          <ul id="lista-jezykow">
             <li>Polski - poziom C1</li>
             <li>Ukraiński – poziom C2</li>
             <li>Rosyjski – poziom C2</li>
             <li>Angielski - poziom B2</li>
           </ul>
+        </section>
+
+        <section class="skill-category">
+          <h2>Napisz do mnie</h2>
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" id="firstName" placeholder="Imię">
+            </div>
+            <div class="form-group">
+              <input type="text" id="lastName" placeholder="Nazwisko">
+            </div>
+            <div class="form-group">
+              <input type="text" id="email" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+              <textarea id="message" placeholder="Wiadomość..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Wyślij</button>
+            <p id="errormsg"></p> 
+          </form>
         </section>
 
         <section class="contact-box">
@@ -100,7 +120,7 @@
           </div>
         </section>
 
-        <section id = "sekcjaProjektow">
+        <section id="sekcjaProjektow">
           <h2>Projekty</h2>
           <div class="section-content">
             <ul>
@@ -114,11 +134,11 @@
     </main>
   </div>
 
-  <div class = "controls">
-  <button id="przyciskMotywu">Zmień kolor</button>
-<button id="przyciskSekcji">Projekty</button>
-</div>
-  
+  <div class="controls">
+    <button id="przyciskMotywu">Zmień kolor</button>
+    <button id="przyciskSekcji">Projekty</button>
+  </div>
+
   <footer class="footer">
     75565
   </footer>
