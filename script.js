@@ -92,4 +92,55 @@ async function wczytajDane() {
     }
 }
 
-window.addEventListener('DOMContentLoaded', wczytajDane);
+
+const UPDATE_KEY = 'Notatki_75565'; 
+
+const poleNotatki = document.getElementById('pole-notatki');
+const przyciskDodaj = document.getElementById('przycisk-dodaj');
+const listaNotatek = document.getElementById('lista-dla-notatek');
+
+function odswiezNotatki() {
+    const otrzymanedane = JSON.parse(localStorage.getItem(UPDATE_KEY)) || [];
+    
+    listaNotatek.innerHTML = ''; 
+    
+    otrzymanedane.forEach((tresc, id) => {
+        const item = document.createElement('li');
+        item.className = 'note-item';
+        item.innerHTML = `
+            <span>${tresc}</span>
+            <button class="delete-note-btn" onclick="usunNotatke(${id})">Usuń</button>
+        `;
+        listaNotatek.appendChild(item);
+    });
+}
+
+przyciskDodaj.addEventListener('click', () => {
+    const tekst = poleNotatki.value.trim();
+    
+    if (tekst !== '') {
+        const otrzymanedane = JSON.parse(localStorage.getItem(UPDATE_KEY)) || [];
+        otrzymanedane.push(tekst);
+        
+        localStorage.setItem(UPDATE_KEY, JSON.stringify(otrzymanedane));
+        
+        poleNotatki.value = ''; 
+        odswiezNotatki();        
+        console.log("75565: Dodano notatkę do LocalStorage");
+    }
+});
+
+window.usunNotatke = function(id) {
+    const otrzymanedane = JSON.parse(localStorage.getItem(UPDATE_KEY)) || [];
+    otrzymanedane.splice(id, 1);
+    
+    localStorage.setItem(UPDATE_KEY, JSON.stringify(otrzymanedane));
+    odswiezNotatki();
+    console.log("75565: Usunięto notatkę z LocalStorage");
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+    console.log("75565: DOM załadowany, uruchamianie funkcji...");
+    wczytajDane();
+    odswiezNotatki();
+});
