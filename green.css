@@ -174,3 +174,42 @@ main {
   margin-top: 5px;
   line-height: 1.2;
 }
+
+.notes-container { margin-top: 20px; }
+.notes-input-group { display: flex; gap: 10px; margin-bottom: 15px; }
+
+#pole-notatki {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #27ae60;
+  border-radius: 4px;
+}
+
+#listadla-notatek { 
+  list-style: none; 
+  padding: 0; 
+}
+.note-item {
+  background-color: #f9fffb;
+  border: 1px solid #d5f5e3;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2c3e50;
+}
+
+.delete-note-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.delete-note-btn:hover { 
+transform: scale(1.2); 
+}
